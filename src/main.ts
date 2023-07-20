@@ -1,11 +1,9 @@
 import {
     ChartConfig,
     ChartModel,
-    ColumnType,
     Query,
     ChartToTSEvent,
     getChartContext,
-    CustomChartContext,
     PointVal
 } from '@thoughtspot/ts-chart-sdk';
 import Highcharts from 'highcharts/es-modules/masters/highcharts.src';
@@ -147,9 +145,6 @@ const renderChart = (ctx: any) => {
     return Promise.resolve();
 };
 
-const showDB = function(e: any){
-    debugger;
-}
 const init = async () => {
     const ctx = await getChartContext({
         getDefaultChartConfig: (chartModel: ChartModel): ChartConfig[] => {
@@ -214,6 +209,7 @@ const init = async () => {
         },
         renderChart: (context) => renderChart(context),
     });
+    console.log(ctx);
 };
 
 init();
